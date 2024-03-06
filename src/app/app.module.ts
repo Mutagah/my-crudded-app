@@ -7,9 +7,11 @@ import { DataFetchService } from './data-fetch.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ReactiveFormComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [DataFetchService],
   bootstrap: [AppComponent],
