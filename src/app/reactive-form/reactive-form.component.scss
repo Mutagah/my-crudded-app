@@ -1,8 +1,13 @@
-.reactive-form{
-    border: 2px solid red;
-    border-radius: 4rem;
-    padding: 2rem;
-    input{
-        margin: 1rem;
-    }
+.reactive-form {
+  border: 2px solid red;
+  border-radius: 4rem;
+  padding: 2rem;
+  input {
+    margin: 1rem;
+  }
+}
+small {
+  color: red;
+  font-weight: bold;
+  padding: 2rem;
 }

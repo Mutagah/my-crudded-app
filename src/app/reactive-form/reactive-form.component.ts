@@ -22,7 +22,7 @@ export class ReactiveFormComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       // My form controls that have been associated with myForm
       title: ['', Validators.required],
-      price: ['', Validators.required],
+      price: ['', [Validators.required,Validators.min(10)]],
       description: ['', Validators.required],
       category: ['', Validators.required],
       image: ['', Validators.required],
@@ -33,8 +33,13 @@ export class ReactiveFormComponent implements OnInit {
   onSubmit() {
     console.log(this.myForm.value);
     // Posting my data to the json file
-    this.myService
-      .postData(this.myForm.value)
-      .subscribe((response) => console.log('Post Successful', response));
+    if (this.myForm.valid) {
+      this.myService
+        .postData(this.myForm.value)
+        .subscribe((response) => console.log('Post Successful', response));
+    }
+    else{
+      console.log("Cannot post you have an error in your form")
+    }
   }
 }

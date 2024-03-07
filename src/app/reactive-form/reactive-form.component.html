@@ -1,4 +1,4 @@
-<div class="container mx-auto my-5">
+<div class="container my-5">
   <div class="row">
     <div class="col-md-6 mx-auto">
       <h2 class="text-center">My Reactive form</h2>
@@ -15,14 +15,20 @@
           placeholder="Title"
           aria-label=".form-control-lg example"
           formControlName="title"
-        />
+        /><small
+          *ngIf="myForm.get('title')?.invalid && myForm.get('title')?.touched"
+          >*Title is a required field</small
+        >
         <input
           class="form-control form-control-lg text-center"
           type="number"
           placeholder="Price"
           aria-label="default input example"
           formControlName="price"
-        />
+        /><small
+          *ngIf="myForm.get('price')?.invalid && myForm.get('price')?.touched"
+          >*Price is a required field</small
+        >
         <input
           class="form-control form-control-lg text-center"
           type="text"
@@ -30,6 +36,13 @@
           aria-label=".form-control-sm example"
           formControlName="description"
         />
+        <small
+          *ngIf="
+            myForm.get('description')?.invalid &&
+            myForm.get('description')?.touched
+          "
+          >*Description is a required field</small
+        >
         <input
           class="form-control form-control-lg text-center"
           type="text"
@@ -37,6 +50,12 @@
           aria-label=".form-control-sm example"
           formControlName="category"
         />
+        <small
+          *ngIf="
+            myForm.get('category')?.invalid && myForm.get('category')?.touched
+          "
+          >*Category is a required field</small
+        >
         <input
           class="form-control form-control-lg text-center"
           type="text"
@@ -44,6 +63,10 @@
           aria-label=".form-control-sm example"
           formControlName="image"
         />
+        <small
+          *ngIf="myForm.get('image')?.invalid && myForm.get('image')?.touched"
+          >*Image is a required field</small
+        >
         <input
           class="form-control form-control-lg text-center"
           type="number"
@@ -51,6 +74,10 @@
           aria-label=".form-control-sm example"
           formControlName="rate"
         />
+        <small
+          *ngIf="myForm.get('rate')?.invalid && myForm.get('rate')?.touched"
+          >*Title is a required field</small
+        >
         <input
           class="form-control form-control-lg text-center"
           type="number"
@@ -58,6 +85,10 @@
           aria-label=".form-control-sm example"
           formControlName="count"
         />
+        <small
+          *ngIf="myForm.get('count')?.invalid && myForm.get('count')?.touched"
+          >*Title is a required field</small
+        >
         <div class="text-center">
           <button
             type="submit"
